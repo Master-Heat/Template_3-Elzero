@@ -8,6 +8,7 @@
   --main-padding-top: 100px;
   --main-padding-bottom: 100px;
 }
+
 * {
   box-sizing: border-box;
   /* margin: 0; */
@@ -94,7 +95,6 @@ h1 {
 }
 /**---------------------------------------- end global rules -----------------------------------------------------*/
 /** ----------------------------------------------- start framework ---------------------------------------------- */
-/** ----------------------------------------------- end Framwork------------------------------------------------ */
 .grid {
   display: grid;
   gap: 40px;
@@ -105,6 +105,12 @@ h1 {
 .col-4 {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+/* dp refers to default padding */
+.dp {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+/** ----------------------------------------------- end Framwork------------------------------------------------ */
 /**---------------------------------------- :start header -----------------------------------------------------*/
 header {
   background-color: white;
@@ -336,8 +342,6 @@ header .mega-menu .links li a i {
 /**---------------------------------------- end lainding -----------------------------------------------------*/
 /**---------------------------------------- start articles -----------------------------------------------------*/
 .articles {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
 
@@ -389,8 +393,7 @@ header .mega-menu .links li a i {
 /**---------------------------------------- start gallery -----------------------------------------------------*/
 .gallery {
   background-color: var(--section-background);
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
+
   position: relative;
 }
 
@@ -430,8 +433,6 @@ header .mega-menu .links li a i {
 /**---------------------------------------- end gallery -----------------------------------------------------*/
 /** ----------------------------------------------- start features---------------------------------------------- */
 .features {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
   position: relative;
   background-color: white;
 }
@@ -553,8 +554,7 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- start testimonials ---------------------------------------------- */
 .testimonials {
   background-color: var(--section-background);
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
+
   position: relative;
 }
 
@@ -595,8 +595,6 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- end testimonials ------------------------------------------------ */
 /** ----------------------------------------------- start team ---------------------------------------------- */
 .team {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
 
@@ -682,8 +680,7 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- start services ---------------------------------------------- */
 .services {
   background-color: var(--section-background);
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
+
   position: relative;
 }
 .services .box {
@@ -760,8 +757,6 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- end services------------------------------------------------ */
 /** ----------------------------------------------- start skills---------------------------------------------- */
 .our-skills {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
 .our-skills .container {
@@ -805,8 +800,7 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- start work steps---------------------------------------------- */
 .work-steps {
   background-color: var(--section-background);
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
+
   position: relative;
 }
 .work-steps .container {
@@ -913,8 +907,6 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- end work steps------------------------------------------------ */
 /** ----------------------------------------------- start Latest Events---------------------------------------------- */
 .events {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
   position: relative;
 }
 .events .container {
@@ -1039,8 +1031,7 @@ header .mega-menu .links li a i {
 /** ----------------------------------------------- start pricing---------------------------------------------- */
 .pricing {
   background-color: var(--section-background);
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
+
   position: relative;
 }
 .pricing .box {
@@ -1154,10 +1145,7 @@ header .mega-menu .links li a i {
 
 /** ----------------------------------------------- end Pricing------------------------------------------------ */
 /** ----------------------------------------------- start videos---------------------------------------------- */
-.videos {
-  padding-top: var(--main-padding-top);
-  padding-bottom: var(--main-padding-bottom);
-}
+
 .videos .holder {
   display: flex;
   justify-content: center;
@@ -1177,8 +1165,7 @@ header .mega-menu .links li a i {
   font-weight: bold;
   color: var(--main);
 }
-.videos .holder .list ul {
-}
+
 .videos .holder .list ul li {
   padding: 20px;
   border-top: 1px solid var(--section-background);
@@ -1217,6 +1204,75 @@ header .mega-menu .links li a i {
   }
 }
 /** ----------------------------------------------- end Videos------------------------------------------------ */
+/** ----------------------------------------------- start stats ---------------------------------------------- */
+.stats {
+  position: relative;
+  background-image: url(../image/stats.jpg);
+  background-size: cover;
+  min-height: 300px;
+}
+.stats::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 /90%);
+}
+.stats h2 {
+  font-weight: bold;
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto 50px;
+  position: relative;
+}
+.stats .box {
+  background-color: white;
+  padding: 30px 15px;
+  text-align: center;
+  position: relative;
+  opacity: 0.75;
+  transition: var(--transition-duration);
+}
+.stats .box:hover {
+  opacity: 1;
+}
+.stats .box::after,
+.stats .box::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: var(--main);
+  transition: 0.8s;
+  height: 0;
+}
+.stats .box:hover::after,
+.stats .box:hover::before {
+  height: 100%;
+}
+.stats .box::before {
+  top: 0;
+  right: 0;
+}
+.stats .box::after {
+  left: 0;
+  bottom: 0;
+}
+.stats .box .number {
+  display: block;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.stats .box .text {
+  color: var(--main);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+/** ----------------------------------------------- end   stats ------------------------------------------------ */
 
 /**---------------------------------------- :start animation -----------------------------------------------------*/
 @keyframes up-and-down {
